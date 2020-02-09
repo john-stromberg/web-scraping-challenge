@@ -19,11 +19,11 @@ def scrape():
     html = browser.html
     soup = bs(html, "html.parser")
 
-    #Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text
+    #scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text
     news_title = soup.find("div", class_= "content_title").text
     news_p = soup.find("div", class_= "article_teaser_body").text
     
-    #Visit the url for JPL Featured Space Image
+    #visit the url for JPL Featured Space Image
     image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(image_url)
 
@@ -38,7 +38,7 @@ def scrape():
         featured_image_url.append(image)
     featured_image = "https://www.jpl.nasa.gov"+ featured_image_url[0]
 
-    #Visit the Mars Weather twitter account
+    #visit the Mars Weather twitter account
     mars_url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(mars_url)
 
@@ -52,12 +52,18 @@ def scrape():
         mars_weather.append(tweet)
        
 
-    #Visit the Mars Facts webpage here and use Pandas to scrape the table containing facts about the planet
+    #visit the Mars Facts webpage here and use Pandas to scrape the table containing facts about the planet
     mars_facts_url = "https://space-facts.com/mars/"
+    browser.visit(mars_facts_url)
+
+    html = browser.html
     fact_table = pd.read_html(mars_facts_url)
     mars_df = fact_table[0]
-    #convert the data to a HTML table string
-    mars_html = mars_df.to_html('table.html')
+    mars_df.columns = ["Description", "Value"]
+    mars_df = mars_df.set_index("Description")
+    
+    #convert the data to a HTML table 
+    mars_df = mars_df.to_html(classes="table table-striped")
     
     #hemispheres
     #visit the USGS Astrogeology site to obtain high resolution images for each of Mar's hemispheres.
@@ -90,13 +96,13 @@ def scrape():
 
     hemisphere_image_urls
 
-    #store data in dictionary 
+    #store returned data in dictionary 
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
         "featured_image": featured_image,
         "mars_weather": mars_weather[0],
-        "mars_html": mars_html,
+        "mars_df": mars_df,
         "hemisphere_image_urls": hemisphere_image_urls
     }
 
