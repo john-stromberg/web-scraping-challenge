@@ -23,10 +23,6 @@ def scrape():
     news_title = soup.find("div", class_= "content_title").text
     news_p = soup.find("div", class_= "article_teaser_body").text
     
-    #add to mars dictionary 
-    mars_dict["news_title"] = news_title
-    mars_dict["news_p"] = news_p
-
     #Visit the url for JPL Featured Space Image
     image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(image_url)
