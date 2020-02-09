@@ -11,8 +11,8 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars")
 #Route to render index.html template using data from Mongo
 @app.route("/")
 def home():
-    mars = mongo.db.collection.find_one()
-    return render_template("index.html", vacation = mars)
+    mars = mongo.db.mars.find_one()
+    return render_template("index.html", mars = mars)
 
 #create a route
 @app.route("/scrape")
