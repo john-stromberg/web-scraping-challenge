@@ -1,6 +1,6 @@
 # Web Scraping - Mission to Mars
 
-![mission_to_mars](Images/mission_to_mars.png)
+![mission_to_mars](images/mission_to_mars.png)
 
 In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
 
@@ -94,12 +94,12 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 ## Step 3 - Application Screenshots
 
-![mission_to_mars](Images/application screenshot 1.png) 
-![mission_to_mars](Images/application screenshot 2.png) 
-![mission_to_mars](Images/application screenshot 3.png) 
-![mission_to_mars](Images/application screenshot 4.png) 
-![mission_to_mars](Images/application screenshot 5.png) 
-![mission_to_mars](Images/application screenshot 6.png) 
+![mission_to_mars](images/application screenshot 1.png) 
+![mission_to_mars](images/application screenshot 2.png) 
+![mission_to_mars](images/application screenshot 3.png) 
+![mission_to_mars](images/application screenshot 4.png) 
+![mission_to_mars](images/application screenshot 5.png) 
+![mission_to_mars](images/application screenshot 6.png) 
  
 
 
