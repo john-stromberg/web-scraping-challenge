@@ -91,7 +91,7 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 ## Step 3 - Application Screenshots
 
-![application_screenshot_1](images/application_screenshot_1.png)
+![application_screenshot_1](images/application_screenshot_one.PNG)
 
 
 
